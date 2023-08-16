@@ -1,9 +1,9 @@
-﻿export module complex.pcomplex.norm;
+﻿export module complex.pcomplex:norm;
 
-export import complex.basic;
-export import complex.pcomplex;
+export import :basic;
+export import :pcomplex_t;
 
-export namespace complex
+export namespace kuma
 {
 	constexpr float64_t norm(const pcomplex64_t& c)noexcept
 	{

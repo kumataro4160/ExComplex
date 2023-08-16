@@ -1,27 +1,10 @@
-﻿module;
+﻿export module complex.pcomplex:sqrt;
 
-#include <complex>
-
-export module complex.sqrt;
-
-export import complex.pcomplex;
+export import :pcomplex_t;
 import realmath.sqrt;
 
-export namespace complex
+export namespace kuma
 {
-	template <class FloatType>
-	constexpr std::complex<FloatType> sqrt(FloatType x)noexcept
-	{
-		if(x >= 0.0)
-		{
-			return std::complex<FloatType>(realmath::sqrt(x));
-		}
-		else
-		{
-			return std::complex<FloatType>(0.0, realmath::sqrt(-x));
-		}
-	}
-
 	constexpr pcomplex64_t sqrt(const pcomplex64_t& p, bool upperHalfPlane = true)noexcept
 	{
 		return pcomplex64_t(realmath::sqrt(p.radius()), (p.argBrad() >> 1) + upperHalfPlane ? 0 : halfArg64);

@@ -1,9 +1,8 @@
-﻿export module complex.pcomplex.conj;
+﻿export module complex.pcomplex:conj;
 
-export import complex.basic;
-export import complex.pcomplex;
+export import :pcomplex_t;
 
-export namespace complex
+export namespace kuma
 {
 	constexpr pcomplex64_t conj(const pcomplex64_t& c)noexcept
 	{

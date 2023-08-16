@@ -5,16 +5,19 @@
 
 export module complex.pcomplex:pcomplex64_t;
 
-export import complex.basic;
+export import :basic;
 
-export namespace complex
+namespace kuma
 {
 	template <class FloatType>
 	constexpr FloatType abs(const std::complex<FloatType>& c)noexcept;
 
 	template <class FloatType>
 	constexpr FloatType arg(const std::complex<FloatType>& c)noexcept;
+}
 
+export namespace kuma
+{
 	constexpr brad64_t halfArg64 = 0x8000000000000000LL;
 
 	constexpr brad64_t argBrad64(float64_t theta)noexcept
@@ -48,7 +51,7 @@ export namespace complex
 
 		}
 		constexpr explicit pcomplex64_t(const std::complex<float64_t>& rectangular)noexcept :
-			rho(complex::abs(rectangular)), beta(argBrad64(complex::arg(rectangular)))
+			rho(kuma::abs(rectangular)), beta(argBrad64(kuma::arg(rectangular)))
 		{
 
 		}
