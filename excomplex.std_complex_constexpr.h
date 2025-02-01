@@ -1,15 +1,14 @@
-﻿module;
+﻿#ifndef KUMATARO_INCLUDE_EXCOMPLEX_STD_COMPLEX_CONSTEXPR_H
+#define KUMATARO_INCLUDE_EXCOMPLEX_STD_COMPLEX_CONSTEXPR_H
 
 #include <complex>
+#include "../RealMath/realmath.sqrt.h"
+#include "../RealMath/realmath.arctan.h"
+#include "../RealMath/realmath.sin.h"
+#include "../RealMath/realmath.cos.h"
 
-export module complex.std_complex_constexpr;
 
-import realmath.sqrt;
-import realmath.arctan;
-import realmath.sin;
-import realmath.cos;
-
-export namespace kuma
+namespace kuma
 {
 	template <class FloatType>
 	constexpr FloatType abs(const std::complex<FloatType>& c)noexcept
@@ -42,3 +41,6 @@ export namespace kuma
 		return rho * std::complex<FloatType>(cos(theta), sin(theta));
 	}
 }
+
+
+#endif

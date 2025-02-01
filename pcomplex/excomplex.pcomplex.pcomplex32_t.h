@@ -1,11 +1,10 @@
-﻿module;
+﻿#ifndef KUMATARO_INCLUDE_EXCOMPLEX_PCOMPLEX_PCOMPLEX32_T_H
+#define KUMATARO_INCLUDE_EXCOMPLEX_PCOMPLEX_PCOMPLEX32_T_H
 
 #include <complex>
 #include <numbers>
+#include "excomplex.pcomplex.base.h"
 
-export module complex.pcomplex:pcomplex32_t;
-
-export import :basic;
 
 namespace kuma
 {
@@ -16,7 +15,7 @@ namespace kuma
 	constexpr FloatType arg(const std::complex<FloatType>& c)noexcept;
 }
 
-export namespace kuma
+namespace kuma
 {
 	constexpr brad32_t halfArg32 = static_cast<brad32_t>(0x80000000LL);
 
@@ -165,3 +164,6 @@ export namespace kuma
 		return !(pl == pr);
 	}
 }
+
+
+#endif

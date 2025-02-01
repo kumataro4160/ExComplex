@@ -1,12 +1,11 @@
-﻿module;
+﻿#ifndef KUMATARO_INCLUDE_EXCOMPLEX_POLAR_H
+#define KUMATARO_INCLUDE_EXCOMPLEX_POLAR_H
 
 #include <complex>
+#include "pcomplex/complex.pcomplex.h"
 
-export module complex.polar;
 
-export import complex.pcomplex;
-
-export namespace kuma
+namespace kuma
 {
 	constexpr std::complex<float64_t> polar(const pcomplex64_t& p)noexcept
 	{
@@ -18,3 +17,6 @@ export namespace kuma
 		return std::complex<float32_t>(real(p), imag(p));
 	}
 }
+
+
+#endif

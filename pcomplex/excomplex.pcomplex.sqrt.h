@@ -1,9 +1,11 @@
-﻿export module complex.pcomplex:sqrt;
+﻿#ifndef KUMATARO_INCLUDE_EXCOMPLEX_PCOMPLEX_SQRT_H
+#define KUMATARO_INCLUDE_EXCOMPLEX_PCOMPLEX_SQRT_H
 
-export import :pcomplex_t;
-import realmath.sqrt;
+#include "excomplex.pcomplex.pcomplex_t.h"
+#include "../../RealMath/realmath.sqrt.h"
 
-export namespace kuma
+
+namespace kuma
 {
 	constexpr pcomplex64_t sqrt(const pcomplex64_t& p, bool upperHalfPlane = true)noexcept
 	{
@@ -15,3 +17,6 @@ export namespace kuma
 		return pcomplex32_t(sqrt(p.radius()), (p.argBrad() >> 1) + upperHalfPlane ? 0 : halfArg32);
 	}
 }
+
+
+#endif

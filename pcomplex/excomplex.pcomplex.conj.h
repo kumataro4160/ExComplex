@@ -1,8 +1,10 @@
-﻿export module complex.pcomplex:conj;
+﻿#ifndef KUMATARO_INCLUDE_EXCOMPLEX_PCOMPLEX_CONJ_H
+#define KUMATARO_INCLUDE_EXCOMPLEX_PCOMPLEX_CONJ_H
 
-export import :pcomplex_t;
+#include "excomplex.pcomplex.pcomplex_t.h"
 
-export namespace kuma
+
+namespace kuma
 {
 	constexpr pcomplex64_t conj(const pcomplex64_t& c)noexcept
 	{
@@ -14,3 +16,6 @@ export namespace kuma
 		return pcomplex32_t(c.radius(), -c.argBrad());
 	}
 }
+
+
+#endif

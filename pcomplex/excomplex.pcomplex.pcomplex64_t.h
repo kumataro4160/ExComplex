@@ -1,11 +1,10 @@
-﻿module;
+﻿#ifndef KUMATARO_INCLUDE_EXCOMPLEX_PCOMPLEX_PCOMPLEX64_T_H
+#define KUMATARO_INCLUDE_EXCOMPLEX_PCOMPLEX_PCOMPLEX64_T_H
 
 #include <complex>
 #include <numbers>
+#include "excomplex.pcomplex.base.h"
 
-export module complex.pcomplex:pcomplex64_t;
-
-export import :basic;
 
 namespace kuma
 {
@@ -16,15 +15,16 @@ namespace kuma
 	constexpr FloatType arg(const std::complex<FloatType>& c)noexcept;
 }
 
-export namespace kuma
+namespace kuma
 {
 	constexpr brad64_t halfArg64 = 0x8000000000000000LL;
 
 	constexpr brad64_t argBrad64(float64_t theta)noexcept
 	{
 		constexpr float64_t c = 0x4000000000000000LL / 0.25;
-		const signed long long loop = static_cast<brad64_t>(theta / (2.0 * std::numbers::pi));
-		const float64_t rest = theta - (loop * (2.0 * std::numbers::pi));
+		constexpr float64_t twopi = static_cast <brad64_t>(2.0 * std::numbers::pi);
+		const signed long long loop = static_cast<brad64_t>(theta / twopi);
+		const float64_t rest = theta - (loop * twopi);
 		return static_cast<brad64_t>(static_cast<unsigned long long>(rest * c));
 	}
 
@@ -164,3 +164,6 @@ export namespace kuma
 		return !(pl == pr);
 	}
 }
+
+
+#endif
