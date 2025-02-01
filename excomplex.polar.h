@@ -2,7 +2,7 @@
 #define KUMATARO_INCLUDE_EXCOMPLEX_POLAR_H
 
 #include <complex>
-#include "pcomplex/complex.pcomplex.h"
+#include "pcomplex/excomplex.pcomplex.h"
 
 
 namespace kuma
